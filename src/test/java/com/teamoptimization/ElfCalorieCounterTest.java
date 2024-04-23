@@ -10,7 +10,6 @@ public class ElfCalorieCounterTest {
     private final ElfCalorieCounter underTest = new ElfCalorieCounter();
 
     @Test
-    @Disabled
     public void testCanFindMaxOfExample() {
         assertThat(underTest.calculateMax(
                 """
