@@ -1,6 +1,5 @@
 package com.teamoptimization;
 
-import com.oocode.Example;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -31,8 +30,30 @@ public class ElfCalorieCounterTest {
                         10000"""
         ), equalTo(24000));
     }
+
     @Test
     public void checkMaxCaloriesForOneElfOneItem() {
         assertThat(underTest.calculateMax("1000"), equalTo(1000));
+    }
+
+    @Test
+    public void checkMaxCaloriesForTwoElfOneItemEach() {
+        assertThat(underTest.calculateMax(
+                """
+                1000
+                
+                2000
+                """), equalTo(2000));
+    }
+    @Test
+    public void checkMaxCaloriesForTwoElvesTwoItemsEach() {
+        assertThat(underTest.calculateMax(
+                """
+                1000
+                3000
+                
+                2000
+                500
+                """), equalTo(4000));
     }
 }
