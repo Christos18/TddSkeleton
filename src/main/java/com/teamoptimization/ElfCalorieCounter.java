@@ -9,13 +9,19 @@ public class ElfCalorieCounter {
 
     }
 
-    public Integer calculateMax(String calories) {
-        String[] caloriesArray = calories.split("\n\n");
+    public int calculateMax(String calories) {
+        String[] caloriesArray = calories.trim().split("\n\n");;
+
+        int max = 0;
 
         for (String calorie : caloriesArray) {
-            return Integer.valueOf(calorie);
+            int currVal = Integer.parseInt(calorie);
+
+            if (currVal > max){
+                max = currVal;
+            }
         }
 
-        return 0;
+        return max;
     }
 }
